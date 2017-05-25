@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Normal: <h:outputText value="#{exemploMB.decimal}"/>
+        <br/>
+        Convertido: 
+        <h:outputText value="#{exemploMB.decimal}">
+            <f:convertNumber maxFractionDigits="2"/>
+        </h:outputText>
+        <h:form>
+            <h:inputText value="#{exemploMB.decimal}">
+                <f:convertNumber maxFractionDigits="4"/>
+            </h:inputText><br/>
+            <h:commandButton value="Alterar"/>
+            <!--
+            Atributos da tag <f:convertNumber/>:
+            maxFractionDigits: com quantas casas decimais, no máximo, o número é apresentado
+            minFractionDigits: com quantas casas decimais, no mínimo, o número é apresentado
+            maxIntegerDigits: Número máximo de números em sua porção inteira
+            minIntegerDigits: Número mínimo de números em sua porção inteira
+            pattern: Padrão de formatação do número (definido no DecimalFormat)
+            type: Tipo como o número é apresentado (number, percent, currency)
+            currencySymbol: Símbolo a ser usado quando o tipo (type) do número for currency
+            -->
+        </h:form>
+    </h:body>
+</html>
+
